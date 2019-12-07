@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css"  th:href="@{/css/login.css}">
+
+<link rel="stylesheet" href="w3.css">
+
+<!-- - BOOTSTRAP -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+
+<title>Student Login</title>
+</head>
+<body>
+<!--  NAV Bar -->
+	
+<nav class="navbar navbar-inverse" style="background-color:#A8C590;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="white">SMS</font></a>
+    </div>
+    
+    <ul class="nav nav-justified">
+      <li><a href="#" th:href="@{/home}" class="menu_li">Application</a></li>
+      <li><a href="#" th:href="@{/admlogin}" class="menu_li">Admin Login</a></li>
+      <li  class="active"><a href="#" th:href="@{/studentlogin}" class="menu_li">Student Login</a></li>
+      <li><a href="#" th:href="@{/falogin}" class="menu_li">Faculty Login</a></li>
+    </ul>
+    
+  </div>
+</nav>
+
+<div class="container">
+<!--  CENTER DIV -->
+<div class="row">
+	<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4" style="background-color:white; height:400px;">
+
+	</div>
+	
+	<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4" style="background-color:white;">
+	<h1>Student Login</h1>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Login Form -->
+    <form th:object="${user}" th:action="@{/studentAuthenticate}" method="post">
+      <input type="text" id="name" class="fadeIn second" name="login" placeholder="Name" th:field="${user.name}">  
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" th:field="${user.password}">
+      <input type="submit" class="fadeIn fourth" value="Submit">
+    </form>
+
+  </div>
+</div>
+	</div>
+
+	<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4" style="background-color:white;">
+	
+	</div>
+</div>
+
+</div>
+<!--  FOOTER  -->
+<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="background-color:#A8C590;text-align:center; height:50px;font-family:courier;font-size:25px;color:white;">
+	Webmaster Information
+</div>	
+
+
+</body>
+</html>
+
+
+

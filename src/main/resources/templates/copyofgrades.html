@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+
+<!-- - BOOTSTRAP -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+<title>Student's Page</title>
+<style>
+.menu_li{
+	color:white;
+}
+
+.menu_li:hover{
+color:#A8C590;
+}
+</style>
+
+</head>
+<body>
+	<!--  NAV Bar -->
+	
+<nav class="navbar navbar-inverse" style="background-color:#A8C590;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="white">SMS</font></a>
+    </div>
+    <ul class="nav navbar-right">
+    <li style="padding-right:50px;">
+    <a href="#" th:href="@{/logout}">
+      <button type="button" class="btn btn-default btn-sm">    
+          <span class="glyphicon glyphicon-log-out" ></span>
+           Log out
+        </button></a>
+        </li>
+    </ul>
+    
+  </div>
+</nav>
+
+<div class="container">
+<!--  CENTER DIV -->
+<div class="row">
+<div class="col-sm-3 col-xs-3 col-md-3 col-lg-3" style="background-color:white; height:400px;">
+  <div style="height:80px"></div>
+  <div class="list-group" style="height:240px">
+    <a href="#" class="list-group-item">Copy of Grades</a>
+    <a href="#" class="list-group-item">GPA</a>
+    <a href="#" class="list-group-item">Available Courses</a>
+     <a href="#" class="list-group-item">Enroll Courses</a>
+  </div>
+  <div style="height:80px"></div>
+</div>
+	
+	<div class="col-sm-9 col-xs-9 col-md-9 col-lg-9" style="background-color:white;">
+	<h2>Copy of Grades</h2>
+	
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Course ID</th>
+      <th scope="col">Course</th>
+      <th scope="col">Units</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="course:${courses}">
+			<th scope="row" th:text=${course.id}>Id</td>
+			<td th:text=${course.name}>Name</td>
+			<td th:text=${course.mobile}>Mobile</td>
+			<td th:text=${course.email}>Email</td>
+		</tr>
+  </tbody>
+</table>
+
+	</div>
+	</div>
+</div>
+<!--  FOOTER  -->
+<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="background-color:#A8C590;text-align:center; height:50px;font-family:courier;font-size:25px;color:white;">
+	Webmaster Information
+</div>	
+
+
+</body>
+</html>
